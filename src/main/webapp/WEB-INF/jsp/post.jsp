@@ -1,18 +1,16 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hello Spring Blog</title>
     <link rel="stylesheet" href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/github-com-BlackrockDigital-startbootstrap-clean-blog/3.3.7+1/clean-blog.min.css">
-
-    <title>hello somin</title>
 </head>
-<body>
 <body>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -56,41 +54,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Som's Blog</h1>
-                    <hr class="small">
-                    <span class="subheading">A Som's Blog Theme by Start Bootstrap</span>
+                <div class="post-heading">
+                    <h1>${post.subject}</h1>
+                    <h2 class="subheading">부제목</h2>
+                    <span class="meta">Posted by <a href="#">Somin</a> on ${post.regDate}</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <c:forEach var="post" items="${postList}">
-                <div class="post-preview">
-                    <a href="/post/${post.id}">
-                        <h2 class="post-title">
-                            ${post.subject}
-                        </h2>
-                        <p class="post-meta">Posted by <a href="#">Somin</a> on ${post.regDate}</p>
-                    </a>
-                </div>
-                <hr>
-            </c:forEach>
-
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                ${post.content}
+            </div>
         </div>
     </div>
-</div>
-
+</article>
 <hr>
 
 <!-- Footer -->
@@ -129,8 +112,10 @@
         </div>
     </div>
 </footer>
-</body>
+
 <script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"/>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"/>
 <script src="/webjars/github-com-BlackrockDigital-startbootstrap-clean-blog/3.3.7+1/clean-blog.min.js"/>
+</body>
 </html>
+
