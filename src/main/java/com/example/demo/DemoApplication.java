@@ -28,6 +28,7 @@ public class DemoApplication {
         return registration;
     }
 
+    // h2 server connection for other users
     @Bean(initMethod = "start", destroyMethod = "stop")
     public Server h2Server() throws SQLException {
         return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
