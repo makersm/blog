@@ -13,7 +13,6 @@
     <title>hello somin</title>
 </head>
 <body>
-<body>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
@@ -74,7 +73,7 @@
                 <div class="post-preview">
                     <a href="/post/${post.id}">
                         <h2 class="post-title">
-                            ${post.subject}
+                            ${post.title}
                         </h2>
                         <p class="post-meta">Posted by <a href="#">Somin</a> on ${post.regDate}</p>
                     </a>

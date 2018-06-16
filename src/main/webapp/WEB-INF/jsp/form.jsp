@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: sayyo
@@ -25,9 +26,16 @@
     <form action="/post/write" method="post">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <div class="form-group">
-            <label for="subject" class="col-sm-2 control-label">Title</label>
+            <label for="title" class="col-sm-2 control-label">Title</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Title">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="subtitle" class="col-sm-2 control-label">SubTitle</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="subTitle">
             </div>
         </div>
 

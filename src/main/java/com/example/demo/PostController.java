@@ -43,4 +43,10 @@ public class PostController {
         model.addAttribute("post", post);
         return "post";
     }
+
+    @RequestMapping(value ="/{id}/delete", method = RequestMethod.GET)
+    public String delete(@PathVariable int id) {
+        postDao.deleteById(id);
+        return "redirect:/post/list";
+    }
 }
